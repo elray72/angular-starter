@@ -1,13 +1,16 @@
 {
   "name": "bojangles",
   "version": "1.0.0",
-  "description": "Angular frontend boilerplate",
+  "description": "Frontend boilerplate for AngularJs",
   "scripts": {
     "build": "rimraf dist && webpack --config config/webpack.prod.js --bail",
     "start": "webpack-dev-server --inline --progress --port 8080"
   },
   "author": "elray72",
   "license": "MIT",
+  "dependencies": {
+    "bows-loader": "^1.0.2"
+  },
   "devDependencies": {
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.1",
@@ -25,8 +28,5 @@
     "webpack": "3.7.1",
     "webpack-dev-server": "2.9.2",
     "webpack-merge": "^4.1.0"
-  },
-  "dependencies": {
-    "bows-loader": "^1.0.2"
   }
 }
