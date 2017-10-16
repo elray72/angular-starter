@@ -1,0 +1,74 @@
+// =====================================================================================================================
+// Variables
+// =====================================================================================================================
+@import "base/colours";
+
+// Base Units
+// ---------------------------------------------------------------------------------------------------------------------
+$base-unit:  60px;
+
+// Colours
+// ---------------------------------------------------------------------------------------------------------------------
+$color-primary:     #262626;
+$color-secondary:   #bfa67a;
+$color-accent:      #0992bf;
+
+$color-dark:        #262626;
+$color-light:       #f8f8f8;
+$color-grey:        #aeadaa;
+
+$color-success:     #27ae60;
+$color-error:       #c0392b;
+$color-warning:     #f1c40f;
+
+// Icons
+// ---------------------------------------------------------------------------------------------------------------------
+$icon-font-path:    "/src/assets/fonts/bootstrap";
+$icon-font-name:    "glyphicons-halflings-regular";
+$icon-font-svg-id:  "glyphicons_halflingsregular";
+
+// Breakpoints
+// ---------------------------------------------------------------------------------------------------------------------
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,      // default: 480p
+    md: 768px,      // default: 768px
+    lg: 992px,      // default: 992px
+    xl: 1200px      // default: 1200px
+) !default;
+
+// Polyfill for Bootstrap 3
+$screen-xs:         map-get($grid-breakpoints, sm);
+$screen-sm:         map-get($grid-breakpoints, md);
+$screen-md:         map-get($grid-breakpoints, lg);
+$screen-lg:         map-get($grid-breakpoints, xl);
+
+// Grid
+// ---------------------------------------------------------------------------------------------------------------------
+$grid-columns:              12;
+$grid-gutter-width:         30px;
+$grid-float-breakpoint:     $screen-sm;                     // nav expand
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1);   // nav collapse
+
+// Extensions
+// ---------------------------------------------------------------------------------------------------------------------
+$bu1:  $base-unit;
+$bu2:  2*$bu1;
+$bu3:  3*$bu1;
+$bu4:  4*$bu1;
+$bu5:  5*$bu1;
+$bu6:  6*$bu1;
+$bu7:  7*$bu1;
+$bu8:  8*$bu1;
+$bu9:  9*$bu1;
+$bu10: 10*$bu1;
+$bu11: 11*$bu1;
+$bu12: 12*$bu1;
+$bu13: 13*$bu1;
+$bu14: 14*$bu1;
+$bu15: 15*$bu1;
+$bu16: 16*$bu1;
+$bu17: 17*$bu1;
+$bu18: 18*$bu1;
+$bu19: 19*$bu1;
+$bu20: 20*$bu1;

@@ -1,0 +1,39 @@
+// =====================================================================================================================
+// Border
+// =====================================================================================================================
+
+@mixin border-radius($top: auto, $right: auto, $bottom: auto, $left: auto) {
+
+}
+
+@mixin border-radius($type: 'all', $radius: 0) {
+    border-top-radius: $top;
+}
+
+@mixin border-radius-r($top: 0, $left: 0) {
+    @include set-position($top, auto, auto, $left);
+}
+
+@mixin border-radius-b($top: 0, $left: 0) {
+    @include set-position($top, auto, auto, $left);
+}
+
+@mixin border-radius-l($top: 0, $left: 0) {
+    @include set-position($top, auto, auto, $left);
+}
+
+@mixin border-radius-tl($top: 0, $left: 0) {
+    @include set-position($top, auto, auto, $left);
+}
+
+@mixin set-position-tr($top: 0, $right: 0) {
+    @include set-position($top, auto, $right, auto);
+}
+
+@mixin set-position-bl($bottom: 0, $left: 0) {
+    @include set-position(auto, auto, $bottom, $left);
+}
+
+@mixin set-position-br($bottom: 0, $right: 0) {
+    @include set-position(auto, $right, $bottom, auto);
+}
