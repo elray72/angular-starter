@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Frontend boilerplate for AngularJs",
   "scripts": {
-    "build": "rimraf dist && webpack --config config/webpack.prod.js --bail",
-    "start": "webpack-dev-server --inline --progress --port 8080"
+    "build": "rimraf dist && webpack --config config/webpack.dev.js --bail",
+    "start": "webpack-dev-server --inline --progress --port 7290"
   },
   "author": "elray72",
   "license": "MIT",
@@ -67,7 +67,7 @@
     "node-sass": "^4.5.3",
     "null-loader": "^0.1.1",
     "phantomjs-prebuilt": "^2.1.7",
-    "postcss-loader": "^2.0.8",
+    "postcss-loader": "^1.2.2",
     "protractor": "~5.1.0",
     "raw-loader": "^0.5.1",
     "resolve-url-loader": "^2.1.1",
