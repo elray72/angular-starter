@@ -1,0 +1,22 @@
+<h2>My Projects</h2>
+<div>
+  <label>Project name:</label> <input #projectName />
+  <button (click)="add(projectName.value); projectName.value=''">
+    Add
+  </button>
+</div>
+<ul class="projects">
+  <li *ngFor="let p of projects" (click)="onSelect(p)"
+      [class.selected]="p === selectedProject">
+    <span class="badge">{{p.id}}</span>
+    <span>{{p.name}}</span>
+    <button class="delete"
+      (click)="delete(p); $event.stopPropagation()">x</button>
+  </li>
+</ul>
+<div *ngIf="selectedProject">
+  <h2>
+    {{selectedProject.name | uppercase}} is my project
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

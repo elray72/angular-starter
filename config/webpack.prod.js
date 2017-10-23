@@ -13,8 +13,8 @@ module.exports = webpackMerge(commonConfig, {
   output: {
     path: helpers.root('dist'),
     publicPath: '/',
-    filename: 'js/[name].[hash].js',
-    chunkFilename: '[id].[hash].chunk.js'
+    filename: 'js/[name].js',
+    chunkFilename: '[id].chunk.js'
   },
 
   plugins: [
@@ -27,7 +27,7 @@ module.exports = webpackMerge(commonConfig, {
       }
     }),
 
-    new ExtractTextPlugin('css/style.[hash].css'),
+    new ExtractTextPlugin('css/style.css'),
 
     new webpack.DefinePlugin({
       'process.env': {

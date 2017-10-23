@@ -1,3 +1,7 @@
+/** ====================================================================================================================
+ // App.Component
+ // ================================================================================================================= */
+
 import { Component, ViewEncapsulation }          from '@angular/core';
 //import { RouterTransition } from './router.animations';
 
@@ -7,7 +11,7 @@ import '../scss/styles.scss';
 
 
 @Component({
-  selector: 'my-app',
+  selector: 'bojangles',
   templateUrl: './app.component.html',
   //animations: [routerTransition()],
   //styleUrls: ['./app.component.scss'],

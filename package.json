@@ -3,8 +3,15 @@
   "version": "1.0.0",
   "description": "Frontend boilerplate for AngularJs",
   "scripts": {
-    "build": "rimraf dist && webpack --config config/webpack.dev.js --bail",
-    "start": "webpack-dev-server --inline --progress --port 7290"
+    "test": "karma start config/karma.conf.js --single-run",
+    "build": "rimraf dist && webpack --config config/webpack.prod.js --bail",
+    "prestart": "npm run build",
+    "start": "webpack-dev-server --inline --progress --port 7290",
+    "copy-dist-files": "node ./copy-dist-files.js",
+    "tslint": "tslint --force -e src/global.d.ts 'src/**/*.ts?(x)'",
+    "i18n": "ng-xi18n",
+    "ng": "ng",
+    "e2e": "ng e2e"
   },
   "author": "elray72",
   "license": "MIT",
@@ -63,7 +70,6 @@
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^2.0.1",
-    "lite-server": "^2.2.2",
     "node-sass": "^4.5.3",
     "null-loader": "^0.1.1",
     "phantomjs-prebuilt": "^2.1.7",

@@ -13,14 +13,12 @@
 @import "base/layout";
 
 // Pages
-//@import "../app/pages/home/styles";
-//@import "../app/pages/product/styles";
-//@import "../app/pages/product-list/styles";
-//@import "../app/pages/project/styles";
-//@import "../app/pages/project-list/styles";
+@import "../app/pages/home/_home";
+@import "../app/pages/project/_project";
+@import "../app/pages/project-list/_project-list";
 
 // Components
-//@import "../app/components/project-search/styles";
+@import "../app/components/project-search/_project-search";
 
 // Developer
 @import "_debug/debug";
