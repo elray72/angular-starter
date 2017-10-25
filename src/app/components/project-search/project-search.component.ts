@@ -1,21 +1,21 @@
+/** ====================================================================================================================
+ // ProjectSearch
+ // ================================================================================================================= */
+
 import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
-
 import { Observable }        from 'rxjs/Observable';
 import { Subject }           from 'rxjs/Subject';
+import { ViewEncapsulation } from '@angular/core';
 
-// Observable class extensions
-import {ViewEncapsulation} from '@angular/core';
 import 'rxjs/add/observable/of';
-
-
-// Observable operators
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
-import { Project }               from '../../_models/project';
-import { ProjectSearchService }  from '../../_services/project-search.service';
+// App Components
+import { Project }              from '../../_models/project';
+import { ProjectSearchService } from '../../_services/project-search.service';
 
 @Component({
   selector: 'project-search',
@@ -24,7 +24,9 @@ import { ProjectSearchService }  from '../../_services/project-search.service';
   providers: [ProjectSearchService],
   //encapsulation: ViewEncapsulation.None
 })
+
 export class ProjectSearchComponent implements OnInit {
+
   projects: Observable<Project[]>;
   private searchTerms = new Subject<string>();
 

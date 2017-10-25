@@ -1,7 +1,7 @@
 {
   "name": "bojangles",
   "version": "1.0.0",
-  "description": "Frontend boilerplate for AngularJs",
+  "description": "Frontend boilerplate for AngularJs - supports WebPack 3, Sass and PostCSS.",
   "scripts": {
     "test": "karma start config/karma.conf.js --single-run",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --bail",
@@ -15,6 +15,10 @@
   },
   "author": "elray72",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/elray72/bojangles"
+  },
   "dependencies": {
     "@angular/animations": "~4.3.1",
     "@angular/common": "~4.3.1",

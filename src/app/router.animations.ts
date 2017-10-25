@@ -4,7 +4,6 @@
 
 import {trigger, state, animate, style, transition} from '@angular/animations';
 
-
 export class RouterAnimations {
 
     animate(): void {
@@ -28,7 +27,6 @@ export function RouterTransition() {
             ])
         ]);
     }
-
 
     return slideToTop();
 }

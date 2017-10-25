@@ -1,3 +1,7 @@
+/** ====================================================================================================================
+ // Home Page
+ // ================================================================================================================= */
+
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Project }                              from '../../_models/project';
 import { ProjectService }                       from '../../_services/project.service';
@@ -21,10 +25,7 @@ export class HomePage implements OnInit {
 
   ngOnInit(): void {
 
-
-
     log('HomePage');
-
     this.projectService.getProjects()
       .then(p => this.projects = p.slice(1, 5));
   }

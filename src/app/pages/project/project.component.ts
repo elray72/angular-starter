@@ -1,3 +1,7 @@
+/** ====================================================================================================================
+ // Project Page
+ // ================================================================================================================= */
+
 import 'rxjs/add/operator/switchMap';
 import { Component, OnInit, ViewEncapsulation }        from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
@@ -15,6 +19,7 @@ import { RouterTransition } from '../../router.animations';
   //styleUrls: [ './project.component.scss' ],
   //encapsulation: ViewEncapsulation.None
 })
+
 export class ProjectPage implements OnInit {
   project: Project;
 
