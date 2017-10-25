@@ -57,11 +57,15 @@ module.exports = {
                         {
                             loader: 'css-loader',
                             options: {
-                                sourceMap: true
+                                sourceMap: true,
+                                importLoaders: 1
                             }
                         },
                         {
                             loader: 'postcss-loader',
+                            options: {
+                                config: 'config/postcss.config.js'
+                            }
                         },
                         {
                             loader: 'resolve-url-loader',
@@ -78,37 +82,51 @@ module.exports = {
                     ]
                 })
             },
-            {
-                test: /\.css$/,
-                exclude: helpers.root('src/app'),
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        {
-                            loader: 'css-loader',
-                            options: {
-                                minimize: true,
-                                sourceMap: true
-                            }
-                        },
-                        'postcss-loader'
-                    ]
-                })
-            },
-            {
-                test: /\.(sass|scss)$/,
-                include: helpers.root('src/app'),
-                use: [
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            minimize: true
-                        }
-                    },
-                    'postcss-loader',
-                    'sass-loader'
-                ]
-            }
+            //{
+            //    test: /\.css$/,
+            //    exclude: helpers.root('src/app'),
+            //    use: ExtractTextPlugin.extract({
+            //        fallback: 'style-loader',
+            //        use: [
+            //            {
+            //                loader: 'css-loader',
+            //                options: {
+            //                    minimize: true,
+            //                    sourceMap: true
+            //                }
+            //            },
+            //            {
+            //                loader: 'postcss-loader',
+            //                options: {
+            //                    config: {
+            //                        path: 'config/postcss.config.js'
+            //                    }
+            //                }
+            //            }
+            //        ]
+            //    })
+            //},
+            //{
+            //    test: /\.(sass|scss)$/,
+            //    include: helpers.root('src/app'),
+            //    use: [
+            //        {
+            //            loader: 'css-loader',
+            //            options: {
+            //                minimize: true
+            //            }
+            //        },
+            //        {
+            //            loader: 'postcss-loader',
+            //            options: {
+            //                config: {
+            //                    path: 'config/postcss.config.js'
+            //                }
+            //            }
+            //        },
+            //        'sass-loader'
+            //    ]
+            //}
         ]
     },
 

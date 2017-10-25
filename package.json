@@ -8,7 +8,7 @@
     "prestart": "npm run build",
     "start": "webpack-dev-server --inline --progress --port 7290",
     "copy-dist-files": "node ./copy-dist-files.js",
-    "tslint": "tslint --force -e src/global.d.ts 'src/**/*.ts?(x)'",
+    "tslint": "tslint --force -e config/global.d.ts 'src/**/*.ts?(x)'",
     "i18n": "ng-xi18n",
     "ng": "ng",
     "e2e": "ng e2e"
