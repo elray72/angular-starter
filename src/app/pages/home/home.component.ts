@@ -19,9 +19,11 @@ var log = require('bows')('HomePage');
 })
 
 export class HomePage implements OnInit {
+
   projects: Project[] = [];
 
-  constructor(private projectService: ProjectService) { }
+  constructor(
+      private projectService: ProjectService) { }
 
   ngOnInit(): void {
 

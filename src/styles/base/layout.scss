@@ -29,8 +29,14 @@ body {
     }
 }
 
+.site {
+
+    &-header, &-nav, &-main, &-footer {
+        width: 100%;
+    }
+}
+
 .header, .content, .footer {
-    width: 100%;
 
     &__container {
         height: 100%;
@@ -41,7 +47,7 @@ body {
 
 // Header
 // ---------------------------------------------------------------------------------------------------------------------
-.header {
+.site-header {
     background: $color-primary;
     height: $header-height;
     @include animate-ease-in-out();
@@ -52,7 +58,7 @@ body {
         top: 0;
         z-index: 1;
 
-        + .content {
+        + .site-main {
             padding-top: $header-height;
         }
     }
@@ -63,17 +69,22 @@ body {
         top: 0;
         z-index: 1;
 
-        + .content {
+        + .site-main {
             padding-top: $header-height;
         }
     }
 }
 
+.site-logo {
+
+}
+
 // Content / Main
 // ---------------------------------------------------------------------------------------------------------------------
-.content {
+.site-main {
 
     .container, .row {
+
         &:before {
             content: none;
         }
@@ -82,7 +93,7 @@ body {
 
 // Sidebar
 // ---------------------------------------------------------------------------------------------------------------------
-.sidebar {
+.site-sidebar {
     position: fixed;
     top: $header-height;
     width: 0;
@@ -115,7 +126,7 @@ body {
 
 // Footer
 // ---------------------------------------------------------------------------------------------------------------------
-.footer {
+.site-footer {
     background: $color-primary;
     height: $footer-height;
     padding: 15px;

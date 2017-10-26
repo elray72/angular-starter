@@ -1,6 +1,22 @@
-<h1>{{title}}</h1>
-<nav>
-  <a routerLink="/home" routerLinkActive="active">Home</a>
-  <a routerLink="/projects" routerLinkActive="active">Projects</a>
+<header class="site-header">
+  <div class="site-logo"></div>
+</header>
+
+<nav class="site-nav">
+  <ul class="site-nav__wrapper">
+    <li class="site-nav__item">
+      <a routerLink="/" routerLinkActive="active">Home</a>
+    </li>
+    <li>
+      <a routerLink="/projects" routerLinkActive="active">Projects</a>
+    </li>
+  </ul>
 </nav>
-<router-outlet></router-outlet>
+
+<div class="site-main">
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="site-footer">
+
+</footer>
