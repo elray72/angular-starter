@@ -15,6 +15,7 @@ import { AppComponent }            from './app.component';
 
 // Components
 import { HomePage }                from './pages/home/home.component';
+import { DashboardPage }           from './pages/dashboard/dashboard.component';
 import { ProjectListPage }         from './pages/project-list/project-list.component';
 import { ProjectPage }             from './pages/project/project.component';
 import { ProjectSearchComponent }  from './components/project-search/project-search.component';
@@ -36,6 +37,7 @@ import { ProjectDataService }      from './_services/project-data.service';
   declarations: [
     AppComponent,
     HomePage,
+    DashboardPage,
     ProjectListPage,
     ProjectPage,
     ProjectSearchComponent

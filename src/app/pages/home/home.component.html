@@ -1,9 +1,40 @@
-<h3>Top Projects</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let p of projects" [routerLink]="['/projects', p.id]"  class="col-1-4">
-    <div class="module project">
-      <h4>{{p.name}}</h4>
-    </div>
-  </a>
-</div>
-<project-search></project-search>
+
+<section class="section hero">
+
+</section>
+
+<section class="section news">
+
+  <h1>Latest posts</h1>
+
+</section>
+
+<section class="section projects">
+
+  <h1>Work</h1>
+
+  <project-search></project-search>
+
+  <ul class="projects__wrapper">
+    <li class="projects__item" *ngFor="let p of projects" >
+
+      <article class="project">
+        <h2 class="project__title">{{p.name}}</h2>
+        <p class="project__desc">Description</p>
+        <a class="project__cta" [routerLink]="['/projects', p.id]">View project</a>
+      </article>
+
+    </li>
+  </ul>
+
+</section>
+
+<section class="page-section contact">
+
+  <h1></h1>
+
+  <form class="contact-form">
+
+  </form>
+
+</section>

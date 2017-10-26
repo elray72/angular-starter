@@ -3,10 +3,10 @@
  // ================================================================================================================= */
 
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Router }            from '@angular/router';
+import { Router }                               from '@angular/router';
 
-import { Project }              from '../../_models/project';
-import { ProjectService }       from '../../_services/project.service';
+import { Project }          from '../../_models/project';
+import { ProjectService }   from '../../_services/project.service';
 import { RouterTransition } from '../../router.animations';
 import { RouterAnimations } from '../../router.animations';
 
@@ -17,8 +17,6 @@ var log = require('bows')('ProjectListPage');
   templateUrl: './project-list.component.html',
   animations: [RouterTransition()],
   host: {'[@RouterTransition]': ''}
-  //styleUrls: [ './project-list.component.scss' ],
-  //encapsulation: ViewEncapsulation.None
 })
 
 export class ProjectListPage implements OnInit {
@@ -29,8 +27,6 @@ export class ProjectListPage implements OnInit {
   constructor(
     private projectService: ProjectService,
     private router: Router) { }
-
-
 
   getProjects(): void {
 
