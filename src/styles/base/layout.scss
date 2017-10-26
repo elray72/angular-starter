@@ -3,7 +3,7 @@
 // =====================================================================================================================
 
 // Default / Mobile
-$header-height: $bu1;
+$header-height: 60px;
 $footer-height: $bu3;
 $sidebar-width: $bu1;
 
@@ -22,6 +22,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100%;
+    font-size: 16px;
     background: $color-light;
 
     > .content {
