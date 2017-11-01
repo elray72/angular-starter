@@ -8,8 +8,8 @@ import { RouterTransition }                     from '../../router.animations';
 @Component({
   selector: 'project',
   templateUrl: './dashboard.component.html',
-  animations: [RouterTransition()],
-  host: {'[@RouterTransition]': ''}
+  //animations: [RouterTransition()],
+  //host: {'[@RouterTransition]': ''}
 })
 
 export class DashboardPage implements OnInit {

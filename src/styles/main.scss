@@ -1,5 +1,5 @@
 // =====================================================================================================================
-// Mixins Mincer
+// Main
 // =====================================================================================================================
 
 // Variables & Bootstrap
@@ -9,9 +9,9 @@
 
 // Base
 @import "vendor/normalize";
+@import "base/typography";
 @import "base/layout";
 @import "base/grid";
-@import "base/typography";
 @import "base/icons";
 
 // Base Components
@@ -23,6 +23,7 @@
 @import "../app/pages/project-list/project-list";
 
 // Components
+@import "../app/components/_site-header/site-header";
 @import "../app/components/project-search/project-search";
 
 // Developer

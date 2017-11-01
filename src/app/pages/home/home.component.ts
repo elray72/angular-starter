@@ -12,8 +12,8 @@ var log = require('bows')('HomePage');
 @Component({
   selector: 'my-dashboard',
   templateUrl: './home.component.html',
-  animations: [RouterTransition()],
-  host: {"[@RouterTransition]": ''}
+  //animations: [RouterTransition()],
+  //host: {"[@RouterTransition]": ''}
   //styleUrls: [ './home.component.scss' ],
   //encapsulation: ViewEncapsulation.None
 })

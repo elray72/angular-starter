@@ -19,6 +19,8 @@ module.exports = {
     module: {
 
         rules: [
+
+            // TS:
             {
                 test: /\.ts$/,
                 use: [
@@ -31,15 +33,21 @@ module.exports = {
                     'angular2-template-loader'
                 ]
             },
+
+            // BOWS:
             {
                 test: /\.(js|ts)$/,
                 exclude: /node_modules/,
                 loaders: ['bows-loader']
             },
+
+            // HTML:
             {
                 test: /\.html$/,
                 use: 'html-loader'
             },
+
+            //// ASSETS: ./src
             {
                 test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
                 loader: 'file-loader',
@@ -48,6 +56,8 @@ module.exports = {
                     name: '[path][name].[ext]'
                 }
             },
+
+            // SCSS: ./src/styles
             {
                 test: /\.(sass|scss)$/,
                 exclude: helpers.root('src/app'),
@@ -62,15 +72,15 @@ module.exports = {
                             }
                         },
                         {
-                            loader: 'postcss-loader',
-                            options: {
-                                config: 'config/postcss.config.js'
-                            }
-                        },
-                        {
                             loader: 'resolve-url-loader',
                             options: {
                                 sourceMap: true
+                            }
+                        },
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                config: 'config/postcss.config.js'
                             }
                         },
                         {
@@ -82,6 +92,8 @@ module.exports = {
                     ]
                 })
             },
+
+            // CSS: ./src/styles
             {
                 test: /\.css$/,
                 exclude: helpers.root('src/app'),

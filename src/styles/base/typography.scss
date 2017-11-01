@@ -1,3 +1,26 @@
 // =====================================================================================================================
 // Typography
 // =====================================================================================================================
+
+$font-directory: '../../assets/fonts/open-sans/';
+@include font-face('Open Sans', $font-directory + 'OpenSans-300-Light', 300, normal, eot woff ttf svg);
+@include font-face('Open Sans', $font-directory + 'OpenSans-400-Regular', 400, normal, eot woff ttf svg);
+@include font-face('Open Sans', $font-directory + 'OpenSans-700-Bold', 700, normal, eot woff ttf svg);
+@include font-face('Open Sans', $font-directory + 'OpenSans-800-ExtraBold', 800, normal, eot woff ttf svg);
+
+//@font-face {
+//    font-family: 'Open Sans';
+//    font-weight: normal;
+//    font-style: normal;
+//    src: url('../../assets/fonts/open-sans/OpenSans-300-Light.eot');
+//    src: url('/src/assets/fonts/open-sans/OpenSans-300-Light.woff') format('woff'),
+//    url('/src/assets/fonts/open-sans/OpenSans-300-Light.ttf') format('truetype');
+//}
+
+//@font-face {
+//    font-family: 'Sharp Sans';
+//    src: url($font-directory + 'sharpsans-book.woff2') format('woff2'),
+//    url($font-directory + 'sharpsans-book.woff') format('woff');
+//    font-weight: normal;
+//    font-style: normal;
+//}

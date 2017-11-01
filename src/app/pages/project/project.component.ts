@@ -14,8 +14,8 @@ import { RouterTransition } from '../../router.animations';
 @Component({
   selector: 'project',
   templateUrl: './project.component.html',
-  animations: [RouterTransition()],
-  host: {'[@RouterTransition]': ''}
+  //animations: [RouterTransition()],
+  //host: {'[@RouterTransition]': ''}
   //styleUrls: [ './project.component.scss' ],
   //encapsulation: ViewEncapsulation.None
 })

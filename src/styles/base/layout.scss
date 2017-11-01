@@ -22,10 +22,16 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    background: $color-light;
+    background: get-color(white);
+    font-size: 16px;
 
-    > .content {
+
+    > .site-main {
         flex: 1 0 auto;
+    }
+
+    * {
+        font-family: 'Open Sans', Arial !important;
     }
 }
 
@@ -48,7 +54,7 @@ body {
 // Header
 // ---------------------------------------------------------------------------------------------------------------------
 .site-header {
-    background: $color-primary;
+    background: get-color(primary);
     height: $header-height;
     @include animate-ease-in-out();
 
@@ -98,7 +104,7 @@ body {
     top: $header-height;
     width: 0;
     height: calc(100% - #{$header-height});
-    background: $color-secondary;
+    background: get-color(secondary);
     @include animate-ease-in-out();
 
     // responsive
@@ -127,7 +133,7 @@ body {
 // Footer
 // ---------------------------------------------------------------------------------------------------------------------
 .site-footer {
-    background: $color-primary;
+    background: get-color(primary);
     height: $footer-height;
     padding: 15px;
     @include animate-ease-in-out();

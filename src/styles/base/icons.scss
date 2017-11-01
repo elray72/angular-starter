@@ -2,21 +2,24 @@
 // Icons
 // =====================================================================================================================
 
+$icon-directory: '../../assets/fonts/glyphicons/';
+@include font-face('Glyphicons', $icon-directory + 'glyphicons-halflings-regular', 300, normal, eot woff woff2 ttf svg);
+
 .icon {
 
-    &-sm {
+    &--sm {
 
     }
 
-    &-md {
+    &--md {
 
     }
 
-    &-lg {
+    &--lg {
 
     }
 
-    &-xl {
+    &--xl {
 
     }
 }

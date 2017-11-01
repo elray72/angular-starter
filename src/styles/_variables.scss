@@ -5,34 +5,52 @@
 // Base Units
 // ---------------------------------------------------------------------------------------------------------------------
 $base-unit:  60px;
+$base-url:   '';
+
+// Fonts
+// ---------------------------------------------------------------------------------------------------------------------
+$font-primary:      'Source Sans', Arial, sans-serif !default;
+$font-secondary:    'Source Sans', Arial, sans-serif !default;
+$font-icon:         'Glyphicons';
 
 // Colours
 // ---------------------------------------------------------------------------------------------------------------------
-$color-primary:     #262626;
-$color-secondary:   #bfa67a;
-$color-accent:      #0992bf;
+$colors: (
 
-$color-dark:        #262626;
-$color-light:       #f8f8f8;
-$color-grey:        #aeadaa;
+    //	Black / White
+    white:          #fff,
+    black:          #111,
 
-$color-success:     #27ae60;
-$color-error:       #c0392b;
-$color-warning:     #f1c40f;
+    // Brand
+    primary:        #ecf0f1,
+    secondary:      #bdc3c7,
+    tertiary:       #34495e,
+
+        stuff: (
+            red: red,
+        ),
+
+    // Alerts
+    success:        #2ecc71,
+    error:          #e74c3c,
+    warning:        #f1c40f
+);
+$color-map: () !default;
+$color-map: map-extend($colors, $color-map);
 
 // Icons
 // ---------------------------------------------------------------------------------------------------------------------
-$icon-font-path:    "/src/assets/fonts/bootstrap";
-$icon-font-name:    "glyphicons-halflings-regular";
-$icon-font-svg-id:  "glyphicons_halflingsregular";
+$icon-font-path:    '/src/assets/fonts/bootstrap';
+$icon-font-name:    'glyphicons-halflings-regular';
+$icon-font-svg-id:  'glyphicons_halflingsregular';
 
 // Breakpoints
 // ---------------------------------------------------------------------------------------------------------------------
 $grid-breakpoints: (
     xs: 0,
-    sm: 576px,      // default: 480p
+    sm: 576px,      // default: 480px
     md: 768px,      // default: 768px
-    lg: 992px,      // default: 992px
+    lg: 1080px,     // default: 992px
     xl: 1200px      // default: 1200px
 ) !default;
 
