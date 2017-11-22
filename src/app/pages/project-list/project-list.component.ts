@@ -15,8 +15,8 @@ var log = require('bows')('ProjectListPage');
 @Component({
   selector: 'project-list',
   templateUrl: './project-list.component.html',
-  //animations: [RouterTransition()],
-  //host: {'[@RouterTransition]': ''}
+  animations: [RouterTransition()],
+  host: {'[@RouterTransition]': ''}
 })
 
 export class ProjectListPage implements OnInit {
