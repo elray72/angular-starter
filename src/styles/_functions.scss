@@ -1,0 +1,109 @@
+// =====================================================================================================================
+// Functions - Application-wide Sass functions.
+// =====================================================================================================================
+
+// Appropriated from sass-boilerplate: https://github.com/HugoGiraudel/sass-boilerplate
+
+/// String replacement
+/// @param {String} $string - full string source
+/// @param {String} $search - partial string to replace
+/// @param {String} $replace - string to replace $search with
+/// @return {String}
+@function str-replace($string, $search, $replace: "") {
+    $index: str-index($string, $search);
+
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+
+/// Extend Map with Deep Merge
+/// @param {Map} $object - first map
+/// @param {ArgList} $objects - other maps
+/// @param {Bool} $deep - recursive mode
+/// @return {Map}
+@function map-extend($object, $objects...) {
+    $last: nth($objects, -1);
+    $deep: $last == true;
+    $max: if($deep, length($objects) - 1, length($objects));
+
+    // Loop through all maps in $objects...
+    @for $i from 1 through $max {
+        // Store current map
+        $current: nth($objects, $i);
+
+        // If not in deep mode, simply merge current map with object
+        @if not $deep {
+            $object: map-merge($object, $current);
+
+        } @else {
+            // If in deep mode
+            // Loop through all tuples in current map
+            @each $key, $value in $current {
+                // If value is a nested map and same key from object is a nested map as well
+                @if type-of($value) == "map" and type-of(map-get($object, $key)) == "map" {
+                    // Recursive extend
+                    $value: extend(map-get($object, $key), $value, true);
+                }
+                // Merge current tuple with object
+                $object: map-merge($object, ($key: $value));
+            }
+        }
+    }
+
+    @return $object;
+}
+
+/// Native `url(..)` function wrapper
+/// @param {String} $base - base URL for the asset
+/// @param {String} $type - asset type folder (e.g. `fonts/`)
+/// @param {String} $path - asset path
+/// @return {Url}
+@function get-asset($base, $type, $path) {
+    @return url($base + $type + $path);
+}
+
+/// Returns URL to an image based on its path
+/// @param {String} $path - image path
+/// @param {String} $base [$base-url] - base URL
+/// @return {Url}
+/// @require $base-url
+@function get-image($path, $base: $base-url) {
+    @return get-asset($base, 'images/', $path);
+}
+
+/// Returns URL to a font based on its path
+/// @param {String} $path - font path
+/// @param {String} $base [$base-url] - base URL
+/// @return {Url}
+/// @require $base-url
+@function get-font($path, $base: $base-url) {
+    @return get-asset($base, 'fonts/', $path);
+}
+
+/// Extend Map with Deep Merge
+/// @param {Map} $object - first map
+/// @param {ArgList} $objects - other maps
+/// @param {Bool} $deep - recursive mode
+/// @return {Map}
+
+// Return color (hex) from color map by name
+/// @param {String} $key - color name/key
+/// @param {Map} $colors - color map
+/// @return color
+@function get-color($key, $map: $colors) {
+
+    @if type-of($key) == string and (str-index($key, ".") or 0) > 0 {
+
+        $parent-key: str-slice($key, 1, str-index($key, ".") - 1);
+        $child-key: str-slice($key, str-index($key, ".") + 1);
+
+        @if type-of(map-get($map, $parent-key)) == map {
+            @return get-color($child-key, map-get($map, $parent-key));
+        }
+    }
+
+    @return map-get($map, $key);
+}

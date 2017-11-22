@@ -1,0 +1,63 @@
+// =====================================================================================================================
+// Developer
+// =====================================================================================================================
+@import "../functions";
+@import "../variables";
+@import "../mixins";
+
+// Local Variables
+$opacity: 0.5;
+
+.dev {
+    position: relative;
+
+    &:after {
+        color: #fff;
+        display: inline-block;
+        padding: 15px 20px;
+        border-top-left-radius: 5px;
+        @include set-position(auto, 0, 0, auto, fixed);
+        @include animate-ease-in-out();
+
+        // Default
+        content: 'Default: #{map-get($grid-breakpoints, xs)} to #{map-get($grid-breakpoints, sm) - 1}';
+        background: #f1c40f;
+        background: rgba(#f1c40f, $opacity);
+
+        // Mobile
+        @include media-breakpoint-up(sm) {
+            content: '$media-breakpoint-up(sm): #{map-get($grid-breakpoints, sm)}';
+            background: #2ecc71;
+            background: rgba(#2ecc71, $opacity);
+        }
+
+        @include media-breakpoint-up(md) {
+            content: '$media-breakpoint-up(md): #{map-get($grid-breakpoints, md)}';
+            background: #3498db;
+            background: rgba(#3498db, $opacity);
+        }
+
+        @include media-breakpoint-up(lg) {
+            content: '$media-breakpoint-up(lg): #{map-get($grid-breakpoints, lg)}';
+            background: #9b59b6;
+            background: rgba(#9b59b6, $opacity);
+        }
+
+        @include media-breakpoint-up(xl) {
+            content: '$media-breakpoint-up(xl): #{map-get($grid-breakpoints, xl)}';
+            background: #e74c3c;
+            background: rgba(#e74c3c, $opacity);
+        }
+    }
+}
+
+.row [class^="col-"] {
+    outline: 2px dashed get-color(secondary);
+}
+
+.header, .content, .footer {
+
+    &__container {
+        outline: 2px dashed get-color(secondary);
+    }
+}

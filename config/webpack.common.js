@@ -4,7 +4,6 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 var helpers = require('./helpers');
 
-
 module.exports = {
 
     entry: {
@@ -20,10 +19,35 @@ module.exports = {
     module: {
 
         rules: [
+
+            // TS:
+            {
+                test: /\.ts$/,
+                use: [
+                    {
+                        loader: 'awesome-typescript-loader',
+                        options: {
+                            configFileName: helpers.root('config/tsconfig.json')
+                        }
+                    },
+                    'angular2-template-loader'
+                ]
+            },
+
+            // BOWS:
+            {
+                test: /\.(js|ts)$/,
+                exclude: /node_modules/,
+                loaders: ['bows-loader']
+            },
+
+            // HTML:
             {
                 test: /\.html$/,
                 use: 'html-loader'
             },
+
+            //// ASSETS: ./src
             {
                 test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
                 loader: 'file-loader',
@@ -32,6 +56,8 @@ module.exports = {
                     name: '[path][name].[ext]'
                 }
             },
+
+            // SCSS: ./src/styles
             {
                 test: /\.(sass|scss)$/,
                 exclude: helpers.root('src/app'),
@@ -41,17 +67,20 @@ module.exports = {
                         {
                             loader: 'css-loader',
                             options: {
-                                minimize: true,
-                                sourceMap: true
+                                sourceMap: true,
+                                importLoaders: 1
                             }
-                        },
-                        {
-                            loader: 'postcss-loader',
                         },
                         {
                             loader: 'resolve-url-loader',
                             options: {
                                 sourceMap: true
+                            }
+                        },
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                config: 'config/postcss.config.js'
                             }
                         },
                         {
@@ -63,6 +92,8 @@ module.exports = {
                     ]
                 })
             },
+
+            // CSS: ./src/styles
             {
                 test: /\.css$/,
                 exclude: helpers.root('src/app'),
@@ -76,35 +107,27 @@ module.exports = {
                                 sourceMap: true
                             }
                         },
-                        'postcss-loader'
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                config: 'config/postcss.config.js'
+                            }
+                        }
                     ]
                 })
-            },
-            {
-                test: /\.(sass|scss)$/,
-                include: helpers.root('src/app'),
-                use: [
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            minimize: true
-                        }
-                    },
-                    'postcss-loader',
-                    'sass-loader'
-                ]
             }
         ]
     },
 
     plugins: [
 
-        //new webpack.ContextReplacementPlugin(
-        //    // The (\\|\/) piece accounts for path separators in *nix and Windows
-        //    /angular(\\|\/)core(\\|\/)@angular/,
-        //    helpers.root('./src'), // location of your src
-        //    {} // a map of your routes
-        //),
+        // Hackaround for Angular
+        new webpack.ContextReplacementPlugin(
+            // The (\\|\/) piece accounts for path separators in *nix and Windows
+            /angular(\\|\/)core(\\|\/)@angular/,
+            helpers.root('./src'), // location of your src
+            {} // a map of your routes
+        ),
 
         new webpack.optimize.CommonsChunkPlugin({
             name: ['main', 'vendor', 'polyfills']
